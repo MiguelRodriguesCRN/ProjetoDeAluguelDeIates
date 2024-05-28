@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens Recebidas</title>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/api.js"></script>
+    <script>
+        function carregarMensagens() {
+            var mensagens = obterMensagens();
+            var tabela = document.getElementById('tabela-mensagens');
+            mensagens.forEach(function(mensagem) {
+                var row = tabela.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = mensagem.nome;
+                cell2.innerHTML = mensagem.email;
+                cell3.innerHTML = mensagem.mensagem;
+            });
+        }
+
+        window.onload = carregarMensagens;
+    </script>
+</head>
+<body>
+    <h2>Mensagens Recebidas</h2>
+    <table id="tabela-mensagens" border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Mensagem</th>
+        </tr>
+    </table>
+</body>
+</html>
