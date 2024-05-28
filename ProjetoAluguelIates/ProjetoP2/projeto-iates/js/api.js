@@ -20,14 +20,18 @@ function obterMensagens() {
 
 function inserirMensagem(mensagem) {
 
-    /*
-
-    var mensagem = {
-            nome: "nome da pessoa", 
-            email: "email informado", 
-            mensagem: "a mensagem informada"} 
-
-    */
+    $.ajax({
+        url: 'https://app-uniesp-p2-b8d2992ac568.herokuapp.com/mensagens',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(mensagem),
+        success: function() {
+            alert('Mensagem enviada com sucesso!');
+        },
+        error: function() {
+            alert('Erro ao enviar mensagem.');
+        }
+    });
 
     var inserir = $.ajax({
 
