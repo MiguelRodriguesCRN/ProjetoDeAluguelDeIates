@@ -44,6 +44,8 @@ function inserirMensagem(mensagem) {
     });
 }
 
+/* Api de login não esta funcionando
+
 function validarUsuario(objLoginSenha) {
     var retorno = false;
 
@@ -66,4 +68,19 @@ function validarUsuario(objLoginSenha) {
     });
 
     return retorno;
+} 
+
+*/
+
+function validarUsuario(objLoginSenha) {
+
+    var emailCorreto = 'admin@admin.com';
+    var senhaCorreta = 'admin';
+
+    if (objLoginSenha.email === emailCorreto && objLoginSenha.senha === senhaCorreta) {
+        return true;
+    } else {
+        return false;
+    }
+
 }
